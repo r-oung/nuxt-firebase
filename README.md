@@ -2,6 +2,10 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Prerequisites
+
+Create a Firebase project and enable [Functions](https://firebase.google.com/docs/functions) and [Hosting](https://firebase.google.com/docs/hosting).
+
 ## Setup
 
 Create a new Nuxt project, see [Nuxt installation](https://nuxt.com/docs/getting-started/installation).
@@ -47,6 +51,11 @@ You will be prompted to answer the following questions:
 ? Configure as a single-page app (rewrite all urls to /index.html)? No
 ? Set up automatic builds and deploys with GitHub? No
 
+Remove the following files from your `public` directory:
+
+- 404.html
+- index.html
+
 Add the following to your `firebase.json` to enable server rendering in Cloud Functions. Don't forget to insert your Firebase project ID:
 
 ```json
@@ -78,72 +87,9 @@ npm run build
 firebase emulators:start
 ```
 
-Make sure to install the dependencies:
+## Build and Deploy
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+firebase deploy
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
